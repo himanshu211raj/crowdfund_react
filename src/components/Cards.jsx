@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -19,7 +20,7 @@ export default function OutlinedCard({
   goalAmount,
   raisedAmount,
 }) {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClose = () => {
     setIsOpen(false);
@@ -53,7 +54,7 @@ export default function OutlinedCard({
             <Typography variant="body2" className="font-bold">
               Goal Amount {goalAmount} ETH
             </Typography>
-            <div className="flex items-center p-5">
+            <div className="flex items-center justify-around p-5">
               <TextField
                 id="outlined-number"
                 label="Amount (in ETH)"
@@ -63,10 +64,7 @@ export default function OutlinedCard({
                   shrink: true,
                 }}
               />
-              <Button
-                variant="contained text-white bg-[#000000] hover:bg-[#6e695c]"
-                className="ml-5 mt-5"
-              >
+              <Button variant="contained" className="color-[#ffff]">
                 Fund
               </Button>
             </div>
