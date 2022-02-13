@@ -14,6 +14,7 @@ import { Layout } from "antd";
 import "antd/dist/antd.css";
 import MenuItems from "./components/MenuItems";
 import Home from "./components/Home";
+import { Link } from "@mui/material";
 const { Header } = Layout;
 
 const styles = {
@@ -62,8 +63,13 @@ const App = ({ isServerInfo }) => {
     <Layout style={{ height: "100vh", overflow: "auto" }}>
       <Router>
         <Header style={styles.header}>
-          <Typography variant="h4" className="text-center w-full">
-            Crowdfund dapp
+          <Typography
+            variant="h4"
+            className="text-center w-full cursor-pointer"
+          >
+            <Link href="/" underline="none">
+              Crowdfund dapp
+            </Link>
           </Typography>
           <MenuItems />
           <div style={styles.headerRight}>
